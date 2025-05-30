@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Form, HTTPException
+from fastapi import FastAPI, Form, HTTPException, Request
 from fastapi.responses import JSONResponse
 import uvicorn
 import os
@@ -6,7 +6,7 @@ import json
 import re
 import logging
 import random
-
+from typing import List
 from langchain_google_genai import GoogleGenerativeAI, GoogleGenerativeAIEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain.prompts import PromptTemplate
@@ -25,7 +25,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # API key configuration
-os.environ["GOOGLE_API_KEY"] = ""  
+os.environ["GOOGLE_API_KEY"] = "AIzaSyBLBUTPQOutII0G4zPyk8iKxfyHSeEyYwE"  
 embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
 
 VECTOR_DB_FOLDER = 'static/vector_db'

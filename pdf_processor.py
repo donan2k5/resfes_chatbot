@@ -16,7 +16,7 @@ import uvicorn
 app = FastAPI()
 
 # API key configuration
-os.environ["GOOGLE_API_KEY"] = ""
+os.environ["GOOGLE_API_KEY"] = "AIzaSyBLBUTPQOutII0G4zPyk8iKxfyHSeEyYwE"
 embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
 
 # Vector DB folder
